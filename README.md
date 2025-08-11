@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 [![MIT License](https://img.shields.io/badge/License-MIT-firebrick.svg)](./LICENSE)
 ![Built with](https://img.shields.io/badge/Built%20With-React%20%7C%20Motoko%20%7C%20ICP-forestgreen)
-![Status](https://img.shields.io/badge/status-learning--project-maroon)
+![Status](https://img.shields.io/badge/status-learning--project-darkgoldenrod)
 
 **icp-note-take** is a responsive note-taking application built with **React** on the frontend and **Motoko** on the backend, deployed to the **Internet Computer (ICP)**.
 
