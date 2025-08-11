@@ -1,9 +1,9 @@
-# 📝 icp-note-take
+# [icp-note-take](https://github.com/andrewblais/icp-note-take)
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![License](https://img.shields.io/github/license/andrewblais/icp-note-take)
-![Built with](https://img.shields.io/badge/Built%20With-React%20%7C%20Motoko%20%7C%20ICP-green)
-![Status](https://img.shields.io/badge/status-learning--project-lightgrey)
+[![MIT License](https://img.shields.io/badge/License-MIT-firebrick.svg)](./LICENSE)
+![Built with](https://img.shields.io/badge/Built%20With-React%20%7C%20Motoko%20%7C%20ICP-forestgreen)
+![Status](https://img.shields.io/badge/status-learning--project-maroon)
 
 **icp-note-take** is a responsive note-taking application built with **React** on the frontend and **Motoko** on the backend, deployed to the **Internet Computer (ICP)**.
 
@@ -14,7 +14,7 @@ It’s a feature-matching rebuild of my earlier [`note-take`](https://github.com
 
 ---
 
-## 🔍 Differences from `note-take`
+## Differences from `note-take`
 
 | Feature / Aspect      | `note-take` (Original)             | `icp-note-take` (This Project)                             |
 | --------------------- | ---------------------------------- | ---------------------------------------------------------- |
@@ -36,49 +36,49 @@ It’s a feature-matching rebuild of my earlier [`note-take`](https://github.com
 - [Project Structure](#-project-structure)
 - [Reflections & Lessons](#-reflections--pain-points)
 - [Resources](#-resources)
-- [Author](#-andrew-blais)
+- [Author](#-author)
 
 ---
 
-## 🖼 Screenshots
+## Screenshots
 
-#### 🖥 Desktop View (Firefox)
+#### Desktop View (Firefox)
 
 ![desktop](readme_assets/desktop.png)
 
-#### 📱 Mobile Display
+#### Mobile Display
 
 ![mobile](readme_assets/mobile.png)
 
-#### 🎭 Add a Joke
+#### Add a Joke
 
 ![joke](readme_assets/joke.png)
 
-#### 🎭 Edit a Note
+#### Edit a Note
 
 ![joke](readme_assets/edit.png)
 
-#### 🎭 Save After Editing
+#### Save After Editing
 
 ![joke](readme_assets/save.png)
 
-#### 🗑 Delete All Notes
+#### Delete All Notes
 
 ![delete](readme_assets/delete_all.png)
 
-#### 🗑 Delete A Single Note
+#### Delete A Single Note
 
 ![delete](readme_assets/delete_one.png)
 
-#### ↕️ Sort Four Ways
+#### Sort Four Ways
 
 ![sort](readme_assets/sort.png)
 
 ---
 
-## 🚀 Installation/Getting Started
+## Installation/Getting Started
 
-> ⚠️ This project runs on the **Internet Computer** via `dfx`. No SQL database is used.
+> This project runs on the **Internet Computer** via `dfx`. No SQL database is used.
 
 ### Prerequisites
 
@@ -110,15 +110,16 @@ dfx deploy
 
 ---
 
-## 🗂 Project Structure
+## Project Structure
 
 ```
 icp-note-take
 ├── .env
 ├── .gitignore
 ├── LICENSE
-├── README.md
 ├── package.json
+├── README.md
+├── readme_assets/
 ├── src/
 │   ├── icp-note-take-backend/
 │   │   └── main.mo
@@ -130,7 +131,6 @@ icp-note-take
 │       └── src/
 │           ├── App.css
 │           ├── App.jsx
-│           ├── assets/images/
 │           ├── components/
 │           │   ├── AllNotes.jsx
 │           │   ├── DeleteAllButton.jsx
@@ -141,15 +141,13 @@ icp-note-take
 │           │   ├── OneNote.jsx
 │           │   ├── RadioSortButton.jsx
 │           │   └── RadioSortButtons.jsx
-│           ├── data/
-│           │   └── exampleNotes.js
 │           └── main.jsx
 └── vite.config.js
 ```
 
 ---
 
-## 🧠 Reflections & Pain Points
+## Reflections & Pain Points
 
 ### Things I Learned
 
@@ -161,7 +159,7 @@ icp-note-take
 
 ---
 
-## 📦 Resources
+## Resources
 
 - [Internet Computer Docs](https://internetcomputer.org/docs/home)
 - [Motoko Base Library](https://internetcomputer.org/docs/motoko/base/)
@@ -178,10 +176,12 @@ _If you see a broken or unclear chunk of code, please open an issue or pull requ
 
 ---
 
+### Author
+
 _Andrew Blais, Boston, Massachusetts_
 
-📖 Student of Full-Stack Web Development, Machine Learning, Software Engineering and AI Safety & Alignment
+Student of Full-Stack Web Development, Machine Learning, Software Engineering and AI Safety & Alignment
 
-🏠 Boston, Massachusetts
+Boston, Massachusetts
 
-🔗 [GitHub](https://github.com/andrewblais) | [Portfolio](https://andrewblais.dev)
+[GitHub](https://github.com/andrewblais) | [Portfolio](https://andrewblais.dev)

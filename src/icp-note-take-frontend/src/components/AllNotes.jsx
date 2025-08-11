@@ -29,9 +29,7 @@ function AllNotes({ currentNotes, setCurrentNotes, moDeleteNote, moGetNotes }) {
      */
     async function deleteNote(id) {
         // Locate the note for confirmation text:
-        const noteToDelete = currentNotes.find(
-            (currentNote) => currentNote.id === id
-        );
+        const noteToDelete = currentNotes.find((currentNote) => currentNote.id === id);
         if (!noteToDelete) return alert("Note not found?!");
 
         // Confirm intent before mutating:

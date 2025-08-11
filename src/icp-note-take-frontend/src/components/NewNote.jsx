@@ -118,8 +118,7 @@ function NewNote({ onAddNewNote }) {
             style={{
                 height: zoomIn ? "17rem" : "4rem",
                 overflowY: zoomIn ? "auto" : "hidden",
-            }}
-        >
+            }}>
             {/* Zooming form container with title and content fields: */}
             <form>
                 {zoomIn && (
@@ -160,8 +159,7 @@ function NewNote({ onAddNewNote }) {
                             onAddNewNote(event, { ...newNoteObject });
                             setNewNoteObject({ title: "", content: "" });
                             setZoomIn(false);
-                        }}
-                    >
+                        }}>
                         <Tooltip title="Save Typed Note">
                             <AddIcon />
                         </Tooltip>
@@ -170,15 +168,9 @@ function NewNote({ onAddNewNote }) {
 
                 <Zoom in={zoomIn} timeout={{ enter: 500, exit: 1 }}>
                     {/* Save joke note: */}
-                    <Fab
-                        className="add-button button-left"
-                        onClick={handleJokeNote}
-                    >
+                    <Fab className="add-button button-left" onClick={handleJokeNote}>
                         <Tooltip title="Save Joke Note">
-                            <FontAwesomeIcon
-                                icon={faFaceSmileWink}
-                                fontSize="1.25rem"
-                            />
+                            <FontAwesomeIcon icon={faFaceSmileWink} fontSize="1.25rem" />
                         </Tooltip>
                     </Fab>
                 </Zoom>

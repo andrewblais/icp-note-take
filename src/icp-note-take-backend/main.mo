@@ -37,6 +37,9 @@ persistent actor DNoteTake {
   };
 
   // --- Stable state ---
+  /// Previous build used `stable` keyword since `actor`
+  ///  didn't have `persistent` prefix. No longer needed,
+  ///  but syntax indicated/commented out for clarity...
 
   /// Persistent list of notes (newest first).
   //   stable var notes : List.List<Note> = List.nil<Note>();

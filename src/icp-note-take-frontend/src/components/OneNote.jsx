@@ -29,14 +29,7 @@ import Tooltip from "@mui/material/Tooltip";
  * @param {Function} props.deleteClick - Handler for deleting the note.
  * @param {Function} props.setCurrentNotes - State setter for notes array in parent.
  */
-function OneNote({
-    id,
-    noteTitle,
-    noteDate,
-    noteContent,
-    deleteClick,
-    setCurrentNotes,
-}) {
+function OneNote({ id, noteTitle, noteDate, noteContent, deleteClick, setCurrentNotes }) {
     const [isEditing, setIsEditing] = useState(false);
     const [editedTitle, setEditedTitle] = useState(noteTitle);
     const [editedContent, setEditedContent] = useState(noteContent);
@@ -97,10 +90,7 @@ function OneNote({
                             <CloseIcon />
                         </Tooltip>
                     </button>
-                    <button
-                        className="button-right"
-                        onClick={() => handleSave(id)}
-                    >
+                    <button className="button-right" onClick={() => handleSave(id)}>
                         <Tooltip title="Save Changes">
                             <SaveIcon />
                         </Tooltip>
@@ -121,10 +111,7 @@ function OneNote({
                             <EditIcon />
                         </Tooltip>
                     </button>
-                    <button
-                        className="button-left"
-                        onClick={() => deleteClick(id)}
-                    >
+                    <button className="button-left" onClick={() => deleteClick(id)}>
                         <Tooltip title="Delete Note">
                             <DeleteOutlineIcon />
                         </Tooltip>
