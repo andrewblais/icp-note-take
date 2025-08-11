@@ -1,59 +1,188 @@
-# `icp-note-take`
+# 📝 d-note-take
 
-Welcome to your new `icp-note-take` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![License](https://img.shields.io/github/license/andrewblais/icp-note-take)
+![Built with](https://img.shields.io/badge/Built%20With-React%20%7C%20Motoko%20%7C%20ICP-green)
+![Status](https://img.shields.io/badge/status-learning--project-lightgrey)
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+**d-note-take** is a responsive note-taking application built with **React** on the frontend and **Motoko** on the backend, deployed to the **Internet Computer (ICP)**.
 
-To learn more before you start working with `icp-note-take`, see the following documentation available online:
+It’s a feature-matching rebuild of my earlier [`note-take`](https://github.com/andrewblais/note-take) project, which used a **Node.js/Express backend with a PostgreSQL database**.
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/motoko/main/language-manual)
+- The main difference is that **d-note-take** stores all data directly on-chain via ICP canisters — eliminating the SQL layer entirely while maintaining core note-taking functionality.
+- This shift showcases how a traditional full-stack app can be re-architected for decentralized, serverless deployment without sacrificing responsiveness or usability.
 
-If you want to start working on your project right away, you might want to try the following commands:
+---
+
+## 🔍 Differences from `note-take`
+
+| Feature / Aspect      | `note-take` (Original)             | `d-note-take` (This Project)                               |
+| --------------------- | ---------------------------------- | ---------------------------------------------------------- |
+| **Backend**           | Node.js + Express                  | Motoko (ICP Canister)                                      |
+| **Database**          | PostgreSQL (via pgAdmin)           | On-chain storage via stable variables                      |
+| **Hosting**           | Local dev / AWS EC2 + S3 planned   | Internet Computer (dfx deploy)                             |
+| **API Integrations**  | Dad Jokes API + Quotes API         | Dad Jokes API only (Quotes removed due to ICP CORS limits) |
+| **Persistence Layer** | Relational DB tables & SQL queries | In-memory data persisted with stable vars                  |
+| **Deployment Flow**   | Node server + React build          | Canister backend + asset canister frontend                 |
+| **Goal**              | Bootcamp capstone (AWS target)     | Learning ICP/Motoko & decentralized deployment             |
+| **Theming**           | Warm CSS theme in `App.css`        | Default styling (will inherit AWS theme later)             |
+
+---
+
+## 📚 Table of Contents
+
+- [Screenshots](#-screenshots)
+- [Installation](#-installationgetting-started)
+- [Project Structure](#-project-structure)
+- [Reflections & Lessons](#-reflections--pain-points)
+- [Resources](#-resources)
+- [Author](#-andrew-blais)
+
+---
+
+## 🖼 Screenshots
+
+
+#### 🖥 Desktop View (Firefox)
+
+![desktop](readme_assets/desktop.png)
+
+#### 📱 Mobile Display
+
+![mobile](readme_assets/mobile.png)
+
+#### 🎭 Add a Joke
+
+![joke](readme_assets/joke.png)
+
+#### 🎭 Edit a Note
+
+![joke](readme_assets/edit.png)
+
+#### 🎭 Save After Editing
+
+![joke](readme_assets/save.png)
+
+#### 🗑 Delete All Notes
+
+![delete](readme_assets/delete_all.png)
+
+#### 🗑 Delete A Single Note
+
+![delete](readme_assets/delete_one.png)
+
+#### ↕️ Sort Four Ways
+
+![sort](readme_assets/sort.png)
+
+---
+
+## 🚀 Installation/Getting Started
+
+> ⚠️ This project runs on the **Internet Computer** via `dfx`. No SQL database is used.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org)
+- [dfx SDK](https://internetcomputer.org/docs/current/references/cli-reference/dfx)
+- [VS Code](https://code.visualstudio.com)
+
+### 1. Install Dependencies
 
 ```bash
-cd icp-note-take/
-dfx help
-dfx canister --help
+npm install
 ```
 
-## Running the project locally
-
-If you want to test your project locally, you can use the following commands:
+### 2. Start the Local Replica
 
 ```bash
-# Starts the replica, running in the background
 dfx start --background
+```
 
-# Deploys your canisters to the replica and generates your candid interface
+### 3. Deploy Canisters Locally
+
+```bash
 dfx deploy
 ```
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
+### 4. Access the App
 
-If you have made changes to your backend canister, you can generate a new candid interface with
+`dfx deploy` will print the local URL (usually `http://127.0.0.1:4943/?canisterId=...`).
 
-```bash
-npm run generate
+---
+
+## 🗂 Project Structure
+
+```
+d-note-take
+├── .env
+├── .gitignore
+├── LICENSE
+├── README.md
+├── package.json
+├── src/
+│   ├── d-note-take-backend/
+│   │   └── main.mo
+│   └── d-note-take-frontend/
+│       ├── index.html
+│       ├── public/
+│       │   ├── pencil_120.png
+│       │   └── pencil_32.ico
+│       └── src/
+│           ├── App.css
+│           ├── App.jsx
+│           ├── assets/images/
+│           ├── components/
+│           │   ├── AllNotes.jsx
+│           │   ├── DeleteAllButton.jsx
+│           │   ├── Footer.jsx
+│           │   ├── formatDate.js
+│           │   ├── Header.jsx
+│           │   ├── NewNote.jsx
+│           │   ├── OneNote.jsx
+│           │   ├── RadioSortButton.jsx
+│           │   └── RadioSortButtons.jsx
+│           ├── data/
+│           │   └── exampleNotes.js
+│           └── main.jsx
+└── vite.config.js
 ```
 
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
+---
 
-If you are making frontend changes, you can start a development server with
+## 🧠 Reflections & Pain Points
 
-```bash
-npm start
-```
+### Things I Learned
 
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+- Motoko’s type system is stricter than JavaScript, but that leads to fewer runtime surprises.
+- Replacing PostgreSQL with stable variables changes how you think about persistence and data modeling.
+- ICP canister deployment has a very different dev cycle from a traditional Node + DB stack.
+- CORS restrictions on ICP mean some APIs are inaccessible without an intermediary — hence [quote](https://github.com/andrewblais/note-take#-add-a-quote) removal.
+- The Internet Computer offers built-in asset hosting, so no need for a separate S3 bucket.
 
-### Note on frontend environment variables
+---
 
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
+## 📦 Resources
 
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
+- [Internet Computer Docs](https://internetcomputer.org/docs/home)
+- [Motoko Base Library](https://internetcomputer.org/docs/motoko/base/)
+- [React](https://react.dev/)
+- [Vite](https://vite.dev/)
+- [icanhazdadjoke API](https://icanhazdadjoke.com/api)
+- [ChatGPT](https://openai.com/index/chatgpt/)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)
+- [Stack Overflow](https://stackoverflow.com/)
+
+---
+
+_If you see a broken or unclear chunk of code, please open an issue or pull request._
+
+---
+
+_Andrew Blais, Boston, Massachusetts_
+
+📖 Student of Full-Stack Web Development, Machine Learning, Software Engineering and AI Safety & Alignment
+
+🏠 Boston, Massachusetts
+
+🔗 [GitHub](https://github.com/andrewblais) | [Portfolio](https://andrewblais.dev)
