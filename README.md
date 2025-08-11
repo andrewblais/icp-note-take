@@ -9,7 +9,7 @@
 
 It’s a feature-matching rebuild of my earlier [`note-take`](https://github.com/andrewblais/note-take) project, which used a **Node.js/Express backend with a PostgreSQL database**.
 
-Completed as an assignment for [Angela Yu's WebDev Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/), developing and extrapolating on her Motoko/React architecture.
+Completed as an assignment for [Angela Yu's WebDev Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/), taking her architecture, expanding and modernizing it with my own style and functionality.
 
 - The main difference is that **icp-note-take** stores all data directly on-chain via ICP canisters — eliminating the SQL layer entirely while maintaining core note-taking functionality.
 - This shift showcases how a traditional full-stack app can be re-architected for decentralized, serverless deployment without sacrificing responsiveness or usability.
