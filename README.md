@@ -1,22 +1,22 @@
-# 📝 d-note-take
+# 📝 icp-note-take
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/github/license/andrewblais/icp-note-take)
 ![Built with](https://img.shields.io/badge/Built%20With-React%20%7C%20Motoko%20%7C%20ICP-green)
 ![Status](https://img.shields.io/badge/status-learning--project-lightgrey)
 
-**d-note-take** is a responsive note-taking application built with **React** on the frontend and **Motoko** on the backend, deployed to the **Internet Computer (ICP)**.
+**icp-note-take** is a responsive note-taking application built with **React** on the frontend and **Motoko** on the backend, deployed to the **Internet Computer (ICP)**.
 
 It’s a feature-matching rebuild of my earlier [`note-take`](https://github.com/andrewblais/note-take) project, which used a **Node.js/Express backend with a PostgreSQL database**.
 
-- The main difference is that **d-note-take** stores all data directly on-chain via ICP canisters — eliminating the SQL layer entirely while maintaining core note-taking functionality.
+- The main difference is that **icp-note-take** stores all data directly on-chain via ICP canisters — eliminating the SQL layer entirely while maintaining core note-taking functionality.
 - This shift showcases how a traditional full-stack app can be re-architected for decentralized, serverless deployment without sacrificing responsiveness or usability.
 
 ---
 
 ## 🔍 Differences from `note-take`
 
-| Feature / Aspect      | `note-take` (Original)             | `d-note-take` (This Project)                               |
+| Feature / Aspect      | `note-take` (Original)             | `icp-note-take` (This Project)                             |
 | --------------------- | ---------------------------------- | ---------------------------------------------------------- |
 | **Backend**           | Node.js + Express                  | Motoko (ICP Canister)                                      |
 | **Database**          | PostgreSQL (via pgAdmin)           | On-chain storage via stable variables                      |
@@ -41,7 +41,6 @@ It’s a feature-matching rebuild of my earlier [`note-take`](https://github.com
 ---
 
 ## 🖼 Screenshots
-
 
 #### 🖥 Desktop View (Firefox)
 
@@ -114,16 +113,16 @@ dfx deploy
 ## 🗂 Project Structure
 
 ```
-d-note-take
+icp-note-take
 ├── .env
 ├── .gitignore
 ├── LICENSE
 ├── README.md
 ├── package.json
 ├── src/
-│   ├── d-note-take-backend/
+│   ├── icp-note-take-backend/
 │   │   └── main.mo
-│   └── d-note-take-frontend/
+│   └── icp-note-take-frontend/
 │       ├── index.html
 │       ├── public/
 │       │   ├── pencil_120.png
